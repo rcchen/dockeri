@@ -25,7 +25,10 @@ class DockeriController < ApplicationController
         else
             @settings.update(server_params)
         end
-        Docker.url = @settings.docker_url
+        puts @settings.docker_protocol
+        puts @settings.docker_url
+        puts @settings.docker_port
+        Docker.url = @settings.docker_protocol + "://" + @settings.docker_url + ":" + @settings.docker_port
         flash[:success] = "Settings updated!"
         redirect_to settings_path
     end
@@ -33,7 +36,7 @@ class DockeriController < ApplicationController
     private
 
     def server_params
-        params.require(:server).permit(:docker_url)
+        params.require(:server).permit(:docker_protocol, :docker_url, :docker_port)
     end
 
 end

@@ -1,3 +1,13 @@
-<h3><%= @container.json["Name"][1..-1] %> <small><%= @container.json["Config"]["Image"] %></h3>
+<h3><%= @container.json["Name"][1..-1] %> <small><%= @container.json["Config"]["Image"] %></small></h3>
+
+<div class="row">
+  <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+
+        </div>
+      </div>
+  </div>
+</div>
 
 <pre><%= JSON.pretty_generate(@container.json) %></pre>

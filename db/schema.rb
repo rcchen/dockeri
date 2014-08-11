@@ -14,7 +14,9 @@
 ActiveRecord::Schema.define(version: 20140811031139) do
 
   create_table "servers", force: true do |t|
+    t.string   "docker_protocol"
     t.string   "docker_url"
+    t.string   "docker_port"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

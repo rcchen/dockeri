@@ -42,6 +42,9 @@ gem 'docker-api', :require => 'docker'
 # Use Figaro for managing environment variables
 gem 'figaro'
 
+# Styling with Bootstrap
 gem "less-rails"
-gem "twitter-bootstrap-rails"
+gem "twitter-bootstrap-rails", branch: "bootstrap3"
 
+# Asynchronous job processing with Sidekiq
+gem 'sidekiq'

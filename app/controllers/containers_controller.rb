@@ -8,6 +8,18 @@ class ContainersController < ApplicationController
         @container = Docker::Container.get(params[:id])
     end
 
+    def start
+        container = Docker::Container.get(params[:id])
+        container.start
+        render nothing: true
+    end
+
+    def stop
+        container = Docker::Container.get(params[:id])
+        container.stop
+        render nothing: true
+    end
+
     def destroy
         container = Docker::Container.get(params[:id])
         container.delete

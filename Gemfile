@@ -48,3 +48,6 @@ gem "twitter-bootstrap-rails", branch: "bootstrap3"
 
 # Asynchronous job processing with Sidekiq
 gem 'sidekiq'
+
+# NProgress loader
+gem 'nprogress-rails'

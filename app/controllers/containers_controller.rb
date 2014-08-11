@@ -25,4 +25,8 @@ class ContainersController < ApplicationController
         container.delete
         render nothing: true
     end
+
+    def new
+        @images = Docker::Image.all
+    end
 end

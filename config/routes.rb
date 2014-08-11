@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   # Container routes
   get 'containers' => 'containers#index'
+  get 'containers/new' => 'containers#new'
   get 'containers/:id' => 'containers#show'
   delete 'containers/:id' => 'containers#destroy'
   get 'containers/:id/stop' => 'containers#stop'

@@ -3,8 +3,12 @@ require 'docker'
 class DockeriController < ApplicationController
 
     def index
-        @containers = Docker::Container.all(:all => true)
-        @images = Docker::Image.all
+        begin
+            @containers = Docker::Container.all(:all => true)
+            @images = Docker::Image.all
+        rescue
+            redirect_to settings_path
+        end
     end
 
     def settings

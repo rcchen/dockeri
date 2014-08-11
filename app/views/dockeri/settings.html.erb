@@ -1,7 +1,7 @@
 <h3>Dockeri <small>Settings</small></h3>
 <%= form_for @settings, url: {action: "settings"}, html: {class: "form"} do |f| %>
     <div class="form-group">
-        <label for="docker_url" class="col-sm-2 control-label">Docker URL</label>
+        <label for="docker_url" class="control-label">Docker URL</label>
         <%= f.text_field :docker_url, class: "form-control" %>
     </div>
     <%= f.submit "Save", class: "btn btn-default" %>

@@ -1,0 +1,21 @@
+<h3>Containers</h3>
+<table class="table">
+    <thead>
+        <th>Container ID</th>
+        <th>Started</th>
+        <th>Actions</th>
+    </thead>
+    <tbody>
+        <% @containers.each do |container| %>
+        <tr>
+            <td><%= link_to container.json["Name"][1..-1], container_path(container.id) %></td>
+            <td><%= distance_of_time_in_words(Time.now, container.json["State"]["StartedAt"]) %> ago</td>
+            <% if container.json["State"]["Running"] %>
+                <td><a class="btn btn-danger dk-delete">Stop</a></td>
+            <% else %>
+                <td><%= link_to "Delete", container_path(container.id), { method: :delete, remote: true, class: "btn btn-danger dk-delete" } %></td>
+            <% end %>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

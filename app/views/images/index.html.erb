@@ -1,0 +1,20 @@
+<h3>Images</h3>
+<table class="table">
+    <thead>
+        <th>Tag</th>
+        <th>Created</th>
+        <th>Actions</th>
+    </thead>
+    <tbody>
+        <% @images.each do |image| %>
+        <tr>
+            <td><%= link_to image.info["RepoTags"][0], image_path(image.id) %></td>
+            <td><%= distance_of_time_in_words(Time.now, Time.at(image.info["Created"])) %> ago</td>
+            <td>
+                <a class="btn btn-success">Start</a>
+                <a class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

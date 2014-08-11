@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Dockeri</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -7,8 +7,34 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<div id="wrapper">
+    <div id="sidebar-wrapper">
+        <%= image_tag("logo_white.png") %>
+        <ul>
+            <%= link_to root_path do %>
+            <li>Home</li>
+            <% end %>
+            <%= link_to images_path do %>
+            <li>Images</li>
+            <% end %>
+            <%= link_to containers_path do %>
+            <li>Containers</li>
+            <% end %>
+            <%= link_to settings_path do %>
+            <li>Settings</li>
+            <% end %>
+        </ul>
+    </div>
+    <div id="content-wrapper">
+        <div class="container-fluid">
+            <% if not flash[:success].nil? %>
+            <div class="alert alert-success" role="alert">
+                <%= flash[:success] %>
+            </div>
+            <% end %>
+            <%= yield %>
+        </div>
+    </div>
+</div>
 </body>
 </html>
